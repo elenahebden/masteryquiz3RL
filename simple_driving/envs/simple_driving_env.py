@@ -15,7 +15,7 @@ RENDER_WIDTH = 960
 class SimpleDrivingEnv(gym.Env):
     metadata = {'render.modes': ['human', 'fp_camera', 'tp_camera']}
 
-    def __init__(self, isDiscrete=True, renders=False):
+    def __init__(self, isDiscrete=True, apply_api_compatibility=True,  renders=False, render_mode):
         if (isDiscrete):
             self.action_space = gym.spaces.Discrete(9)
         else:
@@ -31,7 +31,7 @@ class SimpleDrivingEnv(gym.Env):
           self._p = bc.BulletClient(connection_mode=p.GUI)
         else:
           self._p = bc.BulletClient()
-
+        self.render_mode = mode
         self.reached_goal = False
         self._timeStep = 0.01
         self._actionRepeat = 50
