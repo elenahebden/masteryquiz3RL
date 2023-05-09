@@ -119,7 +119,7 @@ class SimpleDrivingEnv(gym.Env):
         self.prev_dist_to_goal = math.sqrt(((carpos[0] - self.goal[0]) ** 2 +
                                            (carpos[1] - self.goal[1]) ** 2))
         car_ob = self.getExtendedObservation()
-        return np.array(car_ob, dtype=np.float32)
+        return np.array(car_ob)
 
     def render(self, mode='human'):
         if mode == "fp_camera":
