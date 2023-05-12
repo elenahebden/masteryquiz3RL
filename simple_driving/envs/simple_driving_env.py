@@ -109,7 +109,7 @@ class SimpleDrivingEnv(gym.Env):
         self.goal = (x, y)
         self.done = False
         self.reached_goal = False
-        f_name = os.path.join(os.path.dirname(__file__), 'block_red.urdf')
+#        f_name = os.path.join(os.path.dirname(__file__), 'block_red.urdf')
 #         self.obstacle = self._p.loadURDF(fileName=f_name,
 #                    basePosition=[self.np_random.uniform(3, 15), self.np_random.uniform(3, 15), 0]
 #        self.obstacle = self._p.loadURDF(fileName=f_name,
